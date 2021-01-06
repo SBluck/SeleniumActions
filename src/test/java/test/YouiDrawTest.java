@@ -54,7 +54,7 @@ public class YouiDrawTest {
 		driver.manage().window().setSize(new Dimension(1366, 768));
 
 // use implicit in before - waits before running tests
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
+//		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
 
 	}
 
@@ -115,8 +115,6 @@ public class YouiDrawTest {
 		.click().moveToElement(image,0, 0).build().perform();		
 		
 		Screenshot.takeShot(driver, "src/test/resources/reports/testshot.png");
-		
-		Thread.sleep(3000);
 	}
 
 }
