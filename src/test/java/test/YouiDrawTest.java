@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -20,7 +21,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
-
+import helper.Screenshot;
 import pages.HomePage;
 
 public class YouiDrawTest {
@@ -84,7 +85,7 @@ public class YouiDrawTest {
 	
 	// draw initial letters on site
 	@Test
-	public void drawInitial() throws InterruptedException {
+	public void drawInitial() throws InterruptedException, IOException {
 		WebElement image = driver.findElement(By.cssSelector("#catch"));
 
 		home.clickBrush();
@@ -113,7 +114,9 @@ public class YouiDrawTest {
 		.moveByOffset(100,0).moveByOffset(0,100).moveByOffset(-100,0)
 		.click().moveToElement(image,0, 0).build().perform();		
 		
-		Thread.sleep(2000);
+		Screenshot.takeShot(driver, "src/test/resources/reports/testshot.png");
+		
+		Thread.sleep(3000);
 	}
 
 }

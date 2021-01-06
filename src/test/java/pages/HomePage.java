@@ -8,7 +8,7 @@ public class HomePage {
 	// Attributes
 
 		public final String URL = "http://YouiDraw.com/apps/painter/";
-
+		
 		@FindBy(css = "#brush")
 		private WebElement brush;
 
@@ -17,5 +17,5 @@ public class HomePage {
 			brush.click();
 			
 		}
-		
+	
 }
